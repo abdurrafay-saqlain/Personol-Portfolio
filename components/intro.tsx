@@ -74,9 +74,7 @@ export default function Intro() {
             delay: 0.1,
             duration: 0.7,
           }}
-        >
-          👋
-        </motion.span>
+        ></motion.span>
         <br />
         <motion.span
           className="text-4xl"

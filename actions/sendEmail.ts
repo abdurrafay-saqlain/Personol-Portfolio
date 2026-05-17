@@ -9,7 +9,11 @@ import { createTransport, TransportOptions } from "nodemailer";
 
 const transport = createTransport({
   host: process.env.SMTP_HOST,
-  port: process.env.SMTP_PORT,
+  port: Number(process.env.SMTP_PORT),
+  secure: false,
+  tls: {
+    rejectUnauthorized: false,
+  },
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
@@ -33,13 +37,13 @@ export const sendEmail = async ({
       error: "Invalid sender name",
     };
   }
-  if (validateLength(message, 20, 5000).error) {
+  if (validateLength(message, 4, 5000).error) {
     return {
       error: "Invalid message",
     };
   }
 
-  const emailHtml = render(
+  const emailHtml = await render(
     ContactFormEmail({
       message: message,
       senderEmail: senderEmail,

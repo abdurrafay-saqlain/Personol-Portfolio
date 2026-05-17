@@ -1,10 +1,9 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { projectsData } from "@/lib/data";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Button from "./button";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -12,7 +11,6 @@ export default function Project({
   title,
   description,
   tags,
-  imageUrl,
   url,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -20,65 +18,67 @@ export default function Project({
     target: ref,
     offset: ["0 1", "1.33 1"],
   });
-  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
 
   return (
     <motion.div
       ref={ref}
-      style={{
-        scale: scaleProgess,
-        opacity: opacityProgess,
-      }}
-      className="group mb-3 sm:mb-8 last:mb-0"
+      style={{ scale: scaleProgress, opacity: opacityProgress }}
+      className="group mb-6"
     >
-      <section className="bg-gray-100 max-w-[42rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[24rem] hover:bg-gray-200 transition sm:group-even:pl-8 dark:text-white dark:bg-white/10 dark:hover:bg-white/20">
-        <div className="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
-          <h3 className="text-2xl font-semibold">{title}</h3>
-          <p className="mt-2 leading-relaxed text-gray-700 dark:text-white/70">
-            {description}
-          </p>
-          <ul className="flex flex-wrap mt-4 gap-2 sm:mt-auto">
-            {tags.map((tag, index) => (
-              <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
-                key={index}
-              >
-                {tag}
-              </li>
-            ))}
-          </ul>
+      <section className="relative bg-gray-100 dark:bg-white/10 border border-black/5 dark:border-white/10 rounded-2xl p-6 sm:p-8 hover:bg-gray-200 dark:hover:bg-white/20 transition-all duration-300 flex flex-col gap-4">
+        {/* Header Row */}
+        <div className="flex items-start justify-between gap-4">
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+            {title}
+          </h3>
 
           {url && (
-            <Button
-              className={
-                "transition transform z-10 translate-y-8 ease-in-out invisible absolute group-hover:visible  rounded-full right-8 top-4 group-hover:translate-y-0"
-              }
+            <Link
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 flex items-center gap-1.5 text-sm font-medium text-gray-600 dark:text-white/70 hover:text-gray-900 dark:hover:text-white border border-black/10 dark:border-white/20 rounded-full px-4 py-1.5 transition-all hover:border-black/30 dark:hover:border-white/40"
             >
-              <a href={url}>View</a>
-            </Button>
+              View
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-3.5 h-3.5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14 3h7m0 0v7m0-7L10 14M5 5H3a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2v-2"
+                />
+              </svg>
+            </Link>
           )}
         </div>
 
-        <Image
-          src={imageUrl}
-          alt={title}
-          width={448}
-          height={224}
-          quality={95}
-          className="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg shadow-2xl
-        transition 
-        group-hover:scale-[1.04]
-        group-hover:-translate-x-3
-        group-hover:translate-y-3
-        group-hover:-rotate-2
+        {/* Description */}
+        <p className="text-gray-600 dark:text-white/70 leading-relaxed text-sm sm:text-base">
+          {description}
+        </p>
 
-        group-even:group-hover:translate-x-3
-        group-even:group-hover:translate-y-3
-        group-even:group-hover:rotate-2
+        {/* Divider */}
+        <div className="border-t border-black/5 dark:border-white/10" />
 
-        group-even:right-[initial] group-even:-left-40"
-        />
+        {/* Tags */}
+        <ul className="flex flex-wrap gap-2">
+          {tags.map((tag, index) => (
+            <li
+              key={index}
+              className="bg-black/[0.06] dark:bg-white/10 text-gray-700 dark:text-white/70 px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full font-medium"
+            >
+              {tag}
+            </li>
+          ))}
+        </ul>
       </section>
     </motion.div>
   );

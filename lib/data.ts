@@ -1,12 +1,9 @@
-import cashremitImg from "@/public/cashremit.png";
-import tjdistributorsImg from "@/public/tjdistributors.png";
-
 import { CgWorkAlt } from "react-icons/cg";
-import { FaAws, FaReact, FaRaspberryPi } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
+import { LuGraduationCap } from "react-icons/lu";
 import {
   RiCss3Line,
   RiDatabase2Line,
-  RiGatsbyLine,
   RiGitBranchLine,
   RiHtml5Line,
   RiJavascriptLine,
@@ -29,18 +26,18 @@ import {
 
 import React from "react";
 
-const experienceInYears = new Date().getFullYear() - 2017;
+const experienceInYears = new Date().getFullYear() - 2022;
 
 export const profile = {
   avatar: "https://avatars.githubusercontent.com/u/34062262?v=4",
   email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
-  name: "Ketan Patel",
+  name: "Muhammad AbdurRafay Saqlain",
   title: "JavaScript FullStack Developer",
   experience: `${experienceInYears} years`,
   likes: "building web and mobile apps",
-  resumeLink: `https://www.uvic.ca/career-services/_assets/docs/resume-computer-engineering.pdf`,
-  linkedInLink: "",
-  githubLink: "https://github.com/KtanPatel",
+  resumeLink: `/resume.pdf`,
+  linkedInLink: "https://pk.linkedin.com/in/muhammad-abdur-rafay-saqlain-336215202",
+  githubLink: "https://github.com/abdurrafay-saqlain",
 } as const;
 
 export const links = [
@@ -72,54 +69,111 @@ export const links = [
 
 export const experiencesData = [
   {
-    title: "Narola Infotech",
-    location: "Surat, IN",
+    title: "Web Developer – Interns Pakistan",
+    location: "Karachi, PK",
     description:
-      "I've started a journey as a full-stack JavaScript developer after completing my Master of Computer Applications.",
+      "Started my development journey as an intern, working on PSD designs and bug fixing.",
     icon: React.createElement(CgWorkAlt),
-    date: "2018 - 2020",
+    date: "Sep 2021 - Oct 2021",
   },
   {
-    title: "Crest Infosystems",
-    location: "Surat, IN",
+    title: "Web Programmer – The Techrics",
+    location: "Karachi, PK",
     description:
-      "As a backend developer I've been working on various projects. Like starKid, Rightback, and many more.",
+      "Worked on converting PSD designs to HTML and resolving frontend bugs across multiple projects.",
     icon: React.createElement(CgWorkAlt),
-    date: "2020 - 2021",
+    date: "Apr 2022 - Nov 2022",
   },
   {
-    title: "Opash Software",
-    location: "Surat, IN",
+    title: "Web Programmer – BNR 360",
+    location: "Karachi, PK",
     description:
-      "As a co-founder and CTO of Opash Software, I've been working on various projects and contribute to the success of the company.",
+      "Developed websites and built frontend architecture for client-facing web applications.",
     icon: React.createElement(CgWorkAlt),
-    date: "2021 - 2024",
+    date: "Nov 2022 - Apr 2023",
   },
   {
-    title: "Full-Stack Developer",
-    location: "Worldwide",
+    title: "Application Programmer – Interack Solutions",
+    location: "Karachi, PK",
     description:
-      "I'm now a full-stack developer working as a freelancer.",
+      "Developed database architecture and wrote backend logic for various applications.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Dec 2023 - May 2024",
+  },
+  {
+    title: "Programming Instructor – SSUET",
+    location: "Karachi, PK",
+    description:
+      "Taught students HTML, CSS, JavaScript, Git, and web deployment using Vercel. Conducted hands-on sessions and mentored students on real-world projects.",
+    icon: React.createElement(LuGraduationCap),
+    date: "Sep 2024 - Jan 2025",
+  },
+  {
+    title: "Software Developer – Centric Tech Inc",
+    location: "Karachi, PK",
+    description:
+      "Built and maintained backend APIs using Node.js and Express.js. Integrated MongoDB and MySQL, implemented JWT authentication, and worked within Agile/Scrum teams.",
+    icon: React.createElement(CgWorkAlt),
+    date: "Sep 2024 - Jan 2026",
+  },
+  {
+    title: "Software Developer – Al-Hamd Textiles",
+    location: "Karachi, PK",
+    description:
+      "Resolved critical bugs, developed new features, facilitated Scrum meetings, and managed Git workflows during a fast-paced one-month sprint.",
     icon: React.createElement(FaReact),
-    date: "2024 - present",
+    date: "Feb 2026 - Feb 2026",
   },
 ] as const;
 
 export const projectsData = [
   {
-    title: "CashRemit",
+    title: "CareerRails",
     description:
-      "A seamless money transfer platform. CashRemit allows Australian users to transfer AUD to African countries like Nigeria, Ghana, Kenya, etc",
-    tags: ["React", "NodeJS", "MongoDB", "ChakraUI", "Ant Design", "AWS"],
-    imageUrl: cashremitImg,
-    url: "http://cashremit.com.au",
+      "An AI-powered career matching platform that enables users to create intelligent profiles, record video pitches, and get matched with relevant job opportunities — going beyond traditional resumes.",
+    tags: ["Next.js", "Node.js", "Express.js", "MongoDB", "AI"],
+    url: "https://careerails.ai",
   },
   {
-    title: "TJ Distributors",
+    title: "GrowUp",
     description:
-      "An inspection app, admin portal, staff will use mobile app to create inspection on site (like school, stadium etc...) and submit, admin will check, approve, proceed, generate report and certificates. ",
-    tags: ["React", "NodeJS", "MongoDB", "React Native"],
-    imageUrl: tjdistributorsImg,
+      "A fundraising mobile application with backend APIs featuring search, filter, and pagination. Integrated Stripe ACH payouts, Google OAuth authentication, and session management.",
+    tags: ["Node.js", "Express.js", "MongoDB", "Stripe", "Google OAuth"],
+    url: "https://play.google.com/store/apps/details?id=com.centrictech.grow_up_funds",
+  },
+  {
+    title: "Yibi Market",
+    description:
+      "A mobile marketplace application with robust backend services, RESTful APIs, and database integration to support seamless product listing, browsing, and transactions.",
+    tags: ["Node.js", "Express.js", "MongoDB", "REST API"],
+    url: "https://play.google.com/store/apps/details?id=com.centrictech.yibiMarket",
+  },
+  {
+    title: "Medtrac",
+    description:
+      "A comprehensive mental health management system with secure role-based authorization, real-time data handling via Firebase, Stripe payment integration, and personalized care plan features.",
+    tags: ["Node.js", "Firebase", "Stripe", "MongoDB", "Express.js"],
+    url: "",
+  },
+  {
+    title: "Channel NYC",
+    description:
+      "A video streaming platform built with Next.js and Node.js. Developed backend APIs with custom filtration and search functionalities integrated with the frontend for fast content discovery.",
+    tags: ["Next.js", "Node.js", "Express.js", "REST API"],
+    url: "http://channelnyc.com",
+  },
+  {
+    title: "Khan Market",
+    description:
+      "An e-commerce platform featuring coupon management APIs and a complete Stripe payment flow for smooth and secure checkout experiences.",
+    tags: ["Node.js", "Express.js", "Stripe", "MongoDB"],
+    url: "",
+  },
+  {
+    title: "Freelance Platform (FYP)",
+    description:
+      "A full-featured freelance marketplace developed as a Final Year Project. Led a team handling backend/frontend development, API design, database management, and deployment.",
+    tags: ["Node.js", "Express.js", "MongoDB", "REST API", "Git"],
     url: "",
   },
 ] as const;
@@ -132,21 +186,11 @@ export const skillsData = [
   { name: "React", icon: RiReactjsLine },
   { name: "Next.js", icon: RiNextjsLine },
   { name: "NodeJS", icon: RiNodejsLine },
-  { name: "React Native", icon: TbBrandReactNative },
-  { name: "Framer Motion", icon: TbBrandFramerMotion },
   { name: "Git", icon: RiGitBranchLine },
   { name: "Tailwind", icon: RiTailwindCssLine },
   { name: "MongoDB", icon: TbBrandMongodb },
-  { name: "Redux", icon: TbBrandRedux },
-  { name: "Gatsby", icon: RiGatsbyLine },
-  { name: "GraphQL", icon: TbBrandGraphql },
   { name: "Express", icon: TbBrandNodejs },
   { name: "Socket IO", icon: TbBrandSocketIo },
   { name: "PostgreSQL", icon: RiDatabase2Line },
-  { name: "Python", icon: TbBrandPython },
-  { name: "Flask", icon: TbBrandPython },
-  { name: "FastAPI", icon: TbBrandPython },
-  { name: "AWS", icon: FaAws },
-  { name: "Raspberry Pi", icon: FaRaspberryPi },
   { name: "...and more", icon: React.Fragment },
 ] as const;

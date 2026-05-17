@@ -19,29 +19,28 @@ export default function About() {
     >
       <SectionHeading>About me</SectionHeading>
       <p className="mb-3">
-        After graduating with a postgraduate degree in{" "}
-        <span className="font-medium">Computer Science</span>, Upon graduation,
-        I embarked on a journey to become a{" "}
-        <span className="font-medium">full-stack web developer</span>. What
-        drives me most is the thrill of untangling a complex problem and
-        crafting an effective solution. My core stack is{" "}
+        A <span className="font-medium">Computer Engineering graduate</span>{" "}
+        from Sir Syed University of Engineering and Technology, with
+        professional experience building scalable backend systems and modern web
+        applications. My core stack includes{" "}
         <span className="font-medium">
-          React, Next.js, Node.js, MongoDB, and React Native
-        </span>{" "}
-        allowing me to build dynamic and engaging applications across the{" "}
-        <span className="italic">web and mobile platforms</span>. I am also
-        familiar with{" "}
-        <span className="font-medium">
-          TypeScript, electronJS, Python, Flask and fastapi
+          Node.js, Express.js, MongoDB, MySQL, and JavaScript
         </span>
-        . I am always looking to learn new technologies. I am currently looking
-        for a <span className="font-medium">full-time position</span> as a
-        software developer.
+        , with solid frontend skills in{" "}
+        <span className="font-medium">HTML5, CSS3, Bootstrap, and Angular</span>
+        . I have worked on diverse real-world projects including{" "}
+        <span className="italic">
+          payment integrations, RESTful APIs, authentication systems, and video
+          streaming platforms
+        </span>
+        . I am always looking to learn new technologies and am currently seeking
+        a <span className="font-medium">full-time position</span> as a software
+        developer.
       </p>
 
       <p>
-        <span className="italic">When I'm not coding</span>, I enjoy playing
-        video games, watching movies and anime series, or taking walks for a
+        <span className="italic">When I'm not coding</span>, I enjoy exploring
+        new tech, taking on freelance challenges, or simply going out for a
         breath of fresh air.
       </p>
     </motion.section>
